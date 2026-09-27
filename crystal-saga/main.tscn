@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://vy80tqgklsg3"]
 
-[ext_resource type="Texture2D" uid="uid://4s732p6dtcew" path="res://icon.svg" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://bf13kaptwmrey" path="res://sprite_2d.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://p6sqcvaayv31" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c03fu68j4ax43" path="res://player/player.tscn" id="2_0xm2m"]
 
-[sub_resource type="GDScript" id="GDScript_0xm2m"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffhwv"]
+size = Vector2(100, 100)
 
 [node name="Main" type="Node2D" unique_id=860896141]
-script = SubResource("GDScript_0xm2m")
+script = ExtResource("1_0xm2m")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1675718837]
-position = Vector2(320, 180)
-texture = ExtResource("1_ig7tw")
-script = ExtResource("3_h2yge")
+[node name="player" parent="." unique_id=672872690 instance=ExtResource("2_0xm2m")]
+position = Vector2(90, 83)
+
+[node name="TestZone" type="Area2D" parent="." unique_id=1552057697]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestZone" unique_id=1624580917]
+position = Vector2(439, 214)
+shape = SubResource("RectangleShape2D_ffhwv")
+
+[connection signal="body_entered" from="TestZone" to="." method="_on_test_zone_body_entered"]
