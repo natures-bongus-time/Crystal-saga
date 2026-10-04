@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://do0nojcgkmjmq" path="res://tilesets/town_tileset.tres" id="1_pgr6f"]
 [ext_resource type="PackedScene" uid="uid://c03fu68j4ax43" path="res://player/player.tscn" id="2_qcis8"]
+[ext_resource type="Script" uid="uid://dm6iupfrvoc8j" path="res://scenes/exit_zone.gd" id="3_af0vu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffhwv"]
 size = Vector2(480, 20)
@@ -32,8 +33,13 @@ position = Vector2(-39, 87)
 tile_map_data = PackedByteArray("AAALAA0AAAAAAAUAAAAMAA0AAAABAAUAAAANAAwAAAABAAQAAAANAA0AAAABAAUAAAAOAAwAAAACAAQAAAAOAA0AAAACAAUAAAALAA4AAAAAAAYAAAAMAA4AAAABAAYAAAANAA4AAAABAAYAAAAOAA4AAAADAAYAAAAMAAwAAAABAAQAAAALAAwAAAAAAAQAAAA=")
 tile_set = ExtResource("1_pgr6f")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=882606692]
+[node name="ExitToWhisperwood" type="Area2D" parent="." unique_id=882606692]
+script = ExtResource("3_af0vu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=583781928]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitToWhisperwood" unique_id=583781928]
 position = Vector2(240, 262)
 shape = SubResource("RectangleShape2D_ffhwv")
+
+[node name="spawn_points" type="Node2D" parent="." unique_id=1349821829]
+
+[node name="default" type="Marker2D" parent="spawn_points" unique_id=745968394]

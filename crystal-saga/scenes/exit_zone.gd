@@ -1,11 +1,11 @@
-extends Node
+extends Area2D
 
+@export_file("*.tscn") var target_scene: String
+@export var target_spawn_point: String = "default"
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	body_entered.connect(_on_body_entered)
+	
+func _on_body_entered(body: Node2D) -> void:
+		if body.is_in_group("player"):
+			SceneManager.change_scene(target_scene, target_spawn_point)
