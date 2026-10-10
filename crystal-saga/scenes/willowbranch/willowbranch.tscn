@@ -30,11 +30,14 @@ y_sort_enabled = true
 position = Vector2(-39, 87)
 
 [node name="AbovePlayer" type="TileMapLayer" parent="." unique_id=550648683]
+position = Vector2(2, 0)
 tile_map_data = PackedByteArray("AAALAA0AAAAAAAUAAAAMAA0AAAABAAUAAAANAAwAAAABAAQAAAANAA0AAAABAAUAAAAOAAwAAAACAAQAAAAOAA0AAAACAAUAAAALAA4AAAAAAAYAAAAMAA4AAAABAAYAAAANAA4AAAABAAYAAAAOAA4AAAADAAYAAAAMAAwAAAABAAQAAAALAAwAAAAAAAQAAAA=")
 tile_set = ExtResource("1_pgr6f")
 
 [node name="ExitToWhisperwood" type="Area2D" parent="." unique_id=882606692]
 script = ExtResource("3_af0vu")
+target_scene = "uid://1fii8o3gx4oy"
+target_spawn_point = "from_town"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitToWhisperwood" unique_id=583781928]
 position = Vector2(240, 262)
@@ -42,4 +45,8 @@ shape = SubResource("RectangleShape2D_ffhwv")
 
 [node name="spawn_points" type="Node2D" parent="." unique_id=1349821829]
 
-[node name="default" type="Marker2D" parent="spawn_points" unique_id=745968394]
+[node name="default" type="Marker2D" parent="spawn_points" unique_id=745968394 groups=["spawn_points"]]
+position = Vector2(143, 147)
+
+[node name="from_forest" type="Marker2D" parent="spawn_points" unique_id=821978718 groups=["spawn_points"]]
+position = Vector2(139, 234)
