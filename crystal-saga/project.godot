@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Crystal saga"
-run/main_scene="uid://vy80tqgklsg3"
+run/main_scene="uid://ca00onevmk4dk"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -34,7 +34,8 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [global_group]
 
-Player=""
+spawn_points=""
+player=""
 
 [input]
 
